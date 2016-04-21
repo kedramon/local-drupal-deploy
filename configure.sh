@@ -70,13 +70,8 @@ fi
 
 dest="${WWWDIR}${NAME}"
 #make destintion
-if [ -d $dest ]; then
-  printf "%30s\n" $G"Location is exist"$N
-else
-  printf "%30s\n" $R"Location is not exist, creating: ${dest}"$N
-  mkdir -p $dest
-  printf "%s\n" $G"Folder \"${dest}\" created."$N
-fi
+mkdir -p $dest
+printf "%s\n" $G"Folder \"${dest}\" created."$N
 
 printf "%s\n" $G"Creating apache2 config... "$N
 cp default.conf /etc/apache2/sites-available/${NAME}.conf
